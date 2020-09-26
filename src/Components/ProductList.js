@@ -5,7 +5,7 @@ const products = [
     {id:'2', title: 'Rolex Watch', price_dollars: 144000, img: require('../Assets/rolex.jpg'), alt: "logo_rolex_watch"},
     {id:'3', title: 'Nike Shoes', price_dollars: 3000, img: require('../Assets/nike.jpg'), alt: "logo_nike_shoe"},
 ]
-const currencyexchangevalue = 73.70; //to be used if API Call Fails
+//const currencyexchangevalue = 73.70; //to be used if API Call Fails
 
 export const ProductList = () => {
   const [currency, setCurrency] = useState("INR");
@@ -18,7 +18,8 @@ export const ProductList = () => {
           (result) => {
             setUSDRate(result.rates.USD)
          }).catch((e) => {
-          setUSDRate(currencyexchangevalue)});;
+          //setUSDRate(currencyexchangevalue)
+        });;
     },[]);
     const renderedPosts = products.map(product => (
         <article className="productList" key={product.id}>
